@@ -4,7 +4,7 @@ pionki = []
 licznik = 0
 
 for i in range(0,3):
-    pionki.append(a)
+    pionki.append(a.copy())
     pionki[licznik][i] = 1
     licznik += 1
 
