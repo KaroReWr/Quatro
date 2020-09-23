@@ -2,25 +2,26 @@ from Pionek import Pionek
 
 class Board:
     def __init__(self):
-        p1 = Pionek()
-        p2 = Pionek()
         self.pionki = []
-        self.pionki.append(Pionek(0,0,0,0))
-        self.pionki.append(Pionek(0,0,0,1))
-        self.pionki.append(Pionek(0,0,1,1))
-        self.pionki.append(Pionek(0, 1,1,1))
-        self.pionki.append(Pionek(0, 1, 0, 1))
-        self.pionki.append(Pionek(0, 1,1,0))
-        self.pionki.append(Pionek(0, 0, 1, 0))
-        self.pionki.append(Pionek(0, 1, 0, 0))
-        self.pionki.append(Pionek(1, 0, 0, 0))
-        self.pionki.append(Pionek(1, 0, 0, 1))
-        self.pionki.append(Pionek(1, 0, 1, 1))
-        self.pionki.append(Pionek(1, 1, 1, 1))
-        self.pionki.append(Pionek(1, 1, 0, 1))
-        self.pionki.append(Pionek(1, 1, 1, 0))
-        self.pionki.append(Pionek(1, 0, 1, 0))
-        self.pionki.append(Pionek(1, 1, 0, 0))
+
+
+    def getParameters(self):
+        prm = []
+        for pion in range(0, 16):
+            liczba = '{0:04b}'.format(pion)
+            prm.append(list(liczba))
+        return prm
+
+    def getStringWithParameters(self):
+        strng = ''
+        for paramteres_in_list in self.getParameters():
+            for p in paramteres_in_list:
+                strng += p
+        return strng
+
+
+
+
 
     def __str__(self):
         pionki = ''
@@ -28,5 +29,7 @@ class Board:
             pionki += str(pion) + '\n'
         return pionki
 
+a = Board()
+print(a.getStringWithParameters())
 
 
