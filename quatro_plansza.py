@@ -14,13 +14,6 @@ class Board:
             self.pionki.append(pionek)
 
 
-    def getStringWithParameters(self):
-        strng = ''
-        for paramteres_in_list in self.getParameters():
-            for p in paramteres_in_list:
-                strng += p
-        return strng
-
     def __str__(self):
         pionki = ''
         for pion in self.pionki:
