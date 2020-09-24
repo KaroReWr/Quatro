@@ -4,13 +4,15 @@ class Board:
     def __init__(self):
         self.pionki = []
 
-
-    def getParameters(self):
-        prm = []
         for pion in range(0, 16):
             liczba = '{0:04b}'.format(pion)
-            prm.append(list(liczba))
-        return prm
+            color = int(list(liczba)[0])
+            size = int(list(liczba)[1])
+            shape = int(list(liczba)[2])
+            is_hole = int(list(liczba)[3])
+            pionek = Pionek(color,size,shape, is_hole)
+            self.pionki.append(pionek)
+
 
     def getStringWithParameters(self):
         strng = ''
@@ -19,10 +21,6 @@ class Board:
                 strng += p
         return strng
 
-
-
-
-
     def __str__(self):
         pionki = ''
         for pion in self.pionki:
@@ -30,6 +28,6 @@ class Board:
         return pionki
 
 a = Board()
-print(a.getStringWithParameters())
+print(a)
 
 

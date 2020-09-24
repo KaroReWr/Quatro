@@ -8,7 +8,13 @@ for i in range(0,3):
     pionki[licznik][i] = 1
     licznik += 1
 
-print(pionki)
+
+zbior = []
+
+for pion in range(0,16):
+    liczba = '{0:04b}'.format(pion)
+    zbior.append(list(liczba))
+
 
 
 
