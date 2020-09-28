@@ -27,6 +27,11 @@ class Board:
         return pionki_string_output
 
 
+    def pionek_to_string(self):
+        for i in self.pionki:
+            print(str(i.color) + str(i.size) + str(i.shape) + str(i.is_hole))
 
+a = Board()
+a.pionek_to_string()
 
 
