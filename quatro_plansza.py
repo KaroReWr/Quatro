@@ -4,12 +4,12 @@ import copy
 class Board:
     def __init__(self):
         self.pionki = []
+        self.init_pionki()
 
-    def sthg(self):
+    def init_pionki(self):
         for pion in range(0, 16):
             liczba = '{0:04b}'.format(pion)
             liczba_l = list(liczba)
-            liczba_l.copy()
             color = int(liczba_l[0])
             size = int(liczba_l[1])
             shape = int(liczba_l[2])
@@ -21,13 +21,12 @@ class Board:
 
 
     def __str__(self):
-        pionki = ''
+        pionki_string_output = ''
         for pion in self.pionki:
-            pionki += str(pion) + '\n'
-        return pionki
+            pionki_string_output += str(pion) + '\n'
+        return pionki_string_output
 
-a = Board()
-print(a.sthg())
+
 
 
 
