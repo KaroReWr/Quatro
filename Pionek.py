@@ -8,8 +8,11 @@ class Pionek:
     def __str__(self):
         return f'color:{self.color}, size:{self.size}, shape: {self.shape}, is hole in pionek: {self.is_hole}'
 
-    def set_pionek(self, color, size, shape, is_hole):
-        pass
+
+    def pionek_to_string(self):
+        print(str(self.color) + str(self.size) + str(self.shape) + str(self.is_hole))
+
+
 
 
 
