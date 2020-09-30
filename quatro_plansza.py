@@ -27,11 +27,25 @@ class Board:
         return pionki_string_output
 
 
-    def pionek_to_string(self):
+    def plansza_to_string(self):
         for i in self.pionki:
             print(str(i.color) + str(i.size) + str(i.shape) + str(i.is_hole))
 
+
+    def checkPionki(self, pionek1, pionek2):
+        similarities = ''
+        if pionek1.color == pionek2.color:
+            similarities += 'Color is the same. Index: 0'
+        elif pionek1.size == pionek2.size:
+            similarities += 'Size is the same. Index: 1'
+        elif pionek1.shape == pionek2.shape:
+            similarities += 'Shape is the same. Index: 2'
+        elif pionek1.is_hole == pionek2.is_hole:
+            similarities += 'Is_hole is the same. Index: 3'
+        return similarities
+
+
 a = Board()
-a.pionek_to_string()
+a.plansza_to_string()
 
 
