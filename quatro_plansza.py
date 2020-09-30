@@ -34,18 +34,20 @@ class Board:
 
     def checkPionki(self, pionek1, pionek2):
         similarities = ''
-        if pionek1.color == pionek2.color:
-            similarities += 'Color is the same. Index: 0'
-        elif pionek1.size == pionek2.size:
-            similarities += 'Size is the same. Index: 1'
-        elif pionek1.shape == pionek2.shape:
-            similarities += 'Shape is the same. Index: 2'
-        elif pionek1.is_hole == pionek2.is_hole:
-            similarities += 'Is_hole is the same. Index: 3'
-        return similarities
+        for i in range(0,4):
+            if pionek1.color == pionek2.color:
+                similarities += 'Color is the same - index: 0\n'
+            if pionek1.size == pionek2.size:
+                similarities += 'Size is the same - index: 1\n'
+            if pionek1.shape == pionek2.shape:
+                similarities += 'Shape is the same - index: 2\n'
+            if pionek1.is_hole == pionek2.is_hole:
+                similarities += 'Is_hole is the same - index: 3'
+            return similarities if len(similarities) > 0 else "nothing in common"
 
-
+b = Pionek(0,1,1,1)
+c = Pionek(1,0,0,0)
 a = Board()
-a.plansza_to_string()
+print(a.checkPionki(c,b))
 
 
