@@ -36,18 +36,34 @@ class Board:
         similarities = ''
         for i in range(0,4):
             if pionek1.color == pionek2.color:
-                similarities += 'Color is the same - index: 0\n'
+                similarities += f'Color is the same - index: 0 , value: {pionek1.color}\n'
             if pionek1.size == pionek2.size:
-                similarities += 'Size is the same - index: 1\n'
+                similarities += f'Size is the same - index: 1, value: {pionek1.size}\n'
             if pionek1.shape == pionek2.shape:
-                similarities += 'Shape is the same - index: 2\n'
+                similarities += f'Shape is the same - index: 2, value: {pionek1.shape}\n'
             if pionek1.is_hole == pionek2.is_hole:
-                similarities += 'Is_hole is the same - index: 3'
+                similarities += f'Is_hole is the same - index: 3, value: {pionek1.is_hole}'
             return similarities if len(similarities) > 0 else "nothing in common"
 
-b = Pionek(0,1,1,1)
-c = Pionek(1,0,0,0)
+
+    def checkPionki2(self,pionki):
+        for p in range(0, len(pionki) - 1):
+            start = p +1
+            for r in range(start, len(pionki)):
+                pionek_p = pionki[p]
+                pionek_r = pionki[r]
+                print(self.checkPionki(pionek_p,pionek_r))
+
+
+b = Pionek(0,0,0,0)
+c = Pionek(0,1,1,0)
+d = Pionek(0,1,1,1)
+e = Pionek(0,1,0,0)
+
+proba = [b,c,d,e]
 a = Board()
-print(a.checkPionki(c,b))
+
+print(a.checkPionki2(proba))
+
 
 
