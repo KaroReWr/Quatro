@@ -54,11 +54,24 @@ class Board:
                 pionek_r = pionki[r]
                 print("porownuje pionk: ",pionek_p.pionek_to_string(),pionek_r.pionek_to_string())
                 print(self.checkPionki(pionek_p,pionek_r))
+                print(self.checkPionki3(pionek_p,pionek_r))
                 print("----------------------------------")
 
 
+    def checkPionki3(self, pionek1, pionek2):
+        similarities = []
+        if pionek1.color == pionek2.color:
+            similarities.append(0)
+        if pionek1.size == pionek2.size:
+            similarities.append(1)
+        if pionek1.shape == pionek2.shape:
+            similarities.append(2)
+        if pionek1.is_hole == pionek2.is_hole:
+            similarities.append(3)
+        return similarities
+
 b = Pionek(0,0,0,0)
-c = Pionek(0,1,1,0)
+c = Pionek(1,1,1,1)
 d = Pionek(0,1,1,1)
 e = Pionek(0,1,0,0)
 
