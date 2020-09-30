@@ -52,7 +52,9 @@ class Board:
             for r in range(start, len(pionki)):
                 pionek_p = pionki[p]
                 pionek_r = pionki[r]
+                print("porownuje pionk: ",pionek_p.pionek_to_string(),pionek_r.pionek_to_string())
                 print(self.checkPionki(pionek_p,pionek_r))
+                print("----------------------------------")
 
 
 b = Pionek(0,0,0,0)
