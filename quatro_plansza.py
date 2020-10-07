@@ -47,11 +47,12 @@ class Board:
 
 
     def checkPionki2(self,pionki):
+        set_of_common_values = []
         for p in range(0, len(pionki) - 1):
             start = p +1
             for r in range(start, len(pionki)):
-                pionek_p = pionki[p]
-                pionek_r = pionki[r]
+                pionek_p = self.pionki[p]
+                pionek_r = self.pionki[r]
                 print("porownuje pionk: ",pionek_p.pionek_to_string(),pionek_r.pionek_to_string())
                 print(self.checkPionki(pionek_p,pionek_r))
                 print(self.checkPionki3(pionek_p,pionek_r))
@@ -70,6 +71,17 @@ class Board:
             similarities.append(3)
         return similarities
 
+    def zbior_podobienstw(self):
+        set_of_common_values = []
+        for p in range(0, len(self.pionki) - 1):
+            start = p + 1
+            for r in range(start, len(self.pionki)):
+                pionek_p = self.pionki[p]
+                pionek_r = self.pionki[r]
+                set_of_common_values.append(self.checkPionki3(pionek_p, pionek_r))
+        return set_of_common_values
+
+
 b = Pionek(0,0,0,0)
 c = Pionek(1,1,1,1)
 d = Pionek(0,1,1,1)
@@ -78,7 +90,7 @@ e = Pionek(0,1,0,0)
 proba = [b,c,d,e]
 a = Board()
 
-print(a.checkPionki2(proba))
+print(a.zbior_podobienstw())
 
 
 
